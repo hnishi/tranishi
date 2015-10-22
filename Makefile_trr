@@ -2,7 +2,7 @@
 CXX = g++ # compiler
 CXXFLAGS = -Wall -g -O2 -pipe # compiler option, -Wall enables strict warnings
 TARGET = trr_tranishi.exe # the name of the program you want to make
-SRCS =  main.cpp pdbnishi.cpp trr_tranishi.cpp centnishi.cpp inpnishi.cpp # the names of all source files
+SRCS =  trr_main.cpp pdbnishi.cpp trr_tranishi.cpp centnishi.cpp inpnishi.cpp # the names of all source files
 DEPS = nlib.h math_nishi.h # header; a dependency of *.o files
 OBJS := $(SRCS:.cpp=.o) # change the suffix from cpp to o
 
