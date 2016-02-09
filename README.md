@@ -18,11 +18,22 @@ Make movie.pdb from trajectory file of psygene
 trajectoryファイル（.codや.crd）はバイナリで書かれているため、その書式が分からないと中身も読めない。
 以下に記す。
 
-[BEGIN OF FILE]
-  [BEGIN OF STEP]
-  
-  [END OF STEP]
-  ...同上
-  ...同上
-  ...同上
-[END OF FILE]
+以下に示す数字は全てbyte単位である。intは整数型、floatは小数点型である。
+
+4 (no information)
+4 (int, loop number)
+4 (float, simulation time)
+4 (float, cpu time)
+4 (float, total energy)
+4 (float, kinetic energy)
+4 (float, temperature)
+4 (float, potential energy)
+4 (float, rmsf (root mean square fluctuation))
+4 (int, num15svw)
+4 (int, num15hyd)
+4 (float, rmsd (root mean square deviation))
+8 (no information)
+4*3N (float, coordinates(x, y, z), "N" is the number of atoms)
+4 (no information)
+
+以上が、MDのループの1step分で、以降はこれの繰り返し。
