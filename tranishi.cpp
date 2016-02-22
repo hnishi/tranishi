@@ -175,9 +175,6 @@ int tra_nishi::write_cod(const char* filename,int stride){//output trajectory in
                 exit(1);
         }
 
-        //int bfanum,bfrnum;
-        //float bfcoox,bfcooy,bfcooz,bfoccu,bftemf;
-        //char bfreco[6],bfatmn[6],bfresn[5],bfchai[2],bfelem[5];
         int model_num_kokodake=1;
         for(unsigned int n=0;n<total_step;n=n+stride){
 	char bfch;   int rtrn_sel , ccc=0 ;   vector<double> vec;
@@ -185,7 +182,6 @@ int tra_nishi::write_cod(const char* filename,int stride){//output trajectory in
         //fprintf(fout,"MODEL %d\n",loopnum[n]);
         fprintf(fout,"MODEL %d\n",model_num_kokodake);
         model_num_kokodake++;
-        //fprintf(fout,"MODEL %d\n",loopnum[n]);
         for( unsigned int j=0; j < pdb1->total_atom; j++ ){
 		rtrn_sel = select_atom( *pdb1, vec, atom_sel, j );
 		if( rtrn_sel != 0 ) continue;
