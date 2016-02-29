@@ -80,10 +80,15 @@ void tra_nishi::constructor( const char *codname, const char *pdbname, int n, st
 	//cout<<"!!!! total_sel = "<<total_sel<<endl;
         //total_step = loopnum.size();
         total_step = rmsd.size();
-        int loopdist=loopnum[1]-loopnum[0];
-        //cout<<"loopdist= "<<loopdist<<endl;
-        while( loopnum[total_step-1] != ( loopnum[total_step-2] + loopdist ) ){
+            int loopdist=loopnum[0];//loopnum[1]-loopnum[0];
+        if( loopnum[loopnum.size()+1] ){
+            loopdist=loopnum[1]-loopnum[0];
+            //cout<<"loopdist= "<<loopdist<<endl;
+            while( loopnum[total_step-1] != ( loopnum[total_step-2] + loopdist ) ){
                 total_step--;   // check whether total_step is wrong or correct
+            }
+        }else{
+            cout<<"Just one snapshot was detected"<<endl;
         }
 	//cout<<"!!!! total_step = "<<total_step<<endl;
         ifs.close();
