@@ -226,17 +226,13 @@ int tra_nishi::write_cod(const char* filename,int stride){//output trajectory in
         return 0;
 }
 
-
 int tra_nishi::fix_step(const char *filename, int n,float fxcell,float fycell,float fzcell){//not yet implemented
-	
 	return 0;
 }
-
 
 int tra_nishi::fix_cod(float fxcell,float fycell,float fzcell){//replicate atoms because of periodic boundary condition
 	float rdiff;
 	int imove;
-
         for(unsigned int n=0;n<total_step;n++){
                 //fprintf(fout,"MODEL %d\n",n+1);
                 //printf("%i: %f %f %f \n",n,fxcell,fycell,fzcell);
@@ -248,7 +244,6 @@ int tra_nishi::fix_cod(float fxcell,float fycell,float fzcell){//replicate atoms
 		rtrn_sel = select_atom( *pdb1, vec, atom_sel, qqq );
 		if( rtrn_sel != 0 ) continue;
 		ccc++;
-
                 if( pdb1->resn[qqq] == "WAT" )continue;
                 if( pdb1->resn[qqq] == "CIM" )continue;
                 if( pdb1->resn[qqq] == "CIP" )continue;
