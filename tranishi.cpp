@@ -78,17 +78,18 @@ void tra_nishi::constructor( const char *codname, const char *pdbname, int n, st
 		//cout<<"!!!! rtrn_c = "<<rtrn_c<<endl;
         }
 	//cout<<"!!!! total_sel = "<<total_sel<<endl;
-        //total_step = loopnum.size();
         total_step = rmsd.size();
-            int loopdist=loopnum[0];//loopnum[1]-loopnum[0];
-        if( loopnum[loopnum.size()+1] ){
+        int loopdist=loopnum[0];//loopnum[1]-loopnum[0];
+        //cout<<"total_step: "<<total_step<<", size of loopnum: "<<loopnum.size()<<endl;
+        if( total_step > 1 ){
             loopdist=loopnum[1]-loopnum[0];
             //cout<<"loopdist= "<<loopdist<<endl;
             while( loopnum[total_step-1] != ( loopnum[total_step-2] + loopdist ) ){
+                cout<<"NOTE: Loopnumber between two steps are different from other ones."<<endl;
                 total_step--;   // check whether total_step is wrong or correct
             }
         }else{
-            cout<<"Just one snapshot was detected"<<endl;
+            cout<<"NOTE: Just one snapshot was detected"<<endl;
         }
 	//cout<<"!!!! total_step = "<<total_step<<endl;
         ifs.close();
@@ -186,6 +187,8 @@ int tra_nishi::write_cod(const char* filename,int stride){//output trajectory in
         //fprintf(fout,"MODEL %d\n",n+1);
         //fprintf(fout,"MODEL %d\n",loopnum[n]);
         fprintf(fout,"MODEL %d\n",model_num_kokodake);
+        fprintf(fout,"REMARK   Loopnumber: %d, SimulationTime(fs): %f\n",loopnum[n],sitime[n]);
+        //fprintf(fout,"REMARK   Loopnumber: %d, Potential(kcal/mol): %f\n",loopnum[n],potent[n]);
         model_num_kokodake++;
         for( unsigned int j=0; j < pdb1->total_atom; j++ ){
 		rtrn_sel = select_atom( *pdb1, vec, atom_sel, j );

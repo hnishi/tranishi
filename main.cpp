@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-   cout<<"Version info. tranishi v1.3.0 \n";
+   cout<<"Version info. tranishi v1.3.1 \n";
 // ##################### ARGUMENT HANDLING ##########################
 // argv[1]: input file
   if( argv[1]==NULL ){
@@ -43,13 +43,13 @@ int main(int argc, char *argv[]){
   //if( argv[4] )selectatom = argv[4];
 
 // Tranishi
-	cout<<"now loading cod file \n";
     cout<<"ATOM SELECTION = "<<selectatom<<endl;
 	cout<<"STRIDE = "<<stride<<endl;
 	//tra_nishi tra1("../samp/md_pra.cod","../samp/pra.pdb","protein");
 	//tra_nishi tra1("samp/md_npt_10.cod","samp/md0.out.pdb",1);
+	cout<<"### now loading cod file ###\n";
 	tra_nishi tra1( codname.c_str(), pdbname.c_str(),stride, selectatom.c_str() );
-	cout<<"ORIGINAL TOTAL STEP = "<<tra1.total_step*stride<<endl;
+	//cout<<"ORIGINAL TOTAL STEP = "<<tra1.total_step*stride<<endl;
 	cout<<"TOTAL FRAME = "<<tra1.total_step<<endl;
 	//tra1.pdb1->write_pdb("xxx.pdb");
 	//tra1.write_step("md.pdb", 0);
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
     //
     //
 	if(tra1.total_step/stride>500 && selectatom == "all"){
-		puts("WARNING: Number of frames of your input is more than 500.");
+		puts("NOTE: Number of frames of your input is more than 500.");
 		puts("You can set a third argument as a stride number when the output file is too large to show movies with some viewer.");
     }
 	/*	puts("!!! Do you change the stride? put 'y' or 'n'");
@@ -72,12 +72,12 @@ int main(int argc, char *argv[]){
 		}
 	}*/
 
-	cout<<"now writing trajectory in ASCII \n";
+	cout<<"### now writing trajectory in ASCII ###\n";
 	//tra1.write_cod( "out_traj.pdb", stride);
 	tra1.write_cod( "out_traj.pdb", 1);
 	cout<<"output out_traj.pdb"<<endl;
-	cout<<"finished!!!"<<endl;
 // END
-	cout<<"\nit took "<<(float)clock()/CLOCKS_PER_SEC<<" sec of CPU to execute this program"<<endl;
+	cout<<"\nfinished!!!"<<endl;
+	cout<<"it took "<<(float)clock()/CLOCKS_PER_SEC<<" sec of CPU to execute this program"<<endl;
 	return 0;
 }
