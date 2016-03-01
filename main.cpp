@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-   cout<<"Version info. tranishi v1.3.2 \n";
+   cout<<"Version info. tranishi v1.3.3 \n";
 // ##################### ARGUMENT HANDLING ##########################
 // argv[1]: input file
   if( argv[1]==NULL ){
@@ -43,6 +43,7 @@ int main(int argc, char *argv[]){
   //if( argv[4] )selectatom = argv[4];
 
 // Tranishi
+	cout<<"### your input information ###\n";
     cout<<"ATOM SELECTION = "<<selectatom<<endl;
 	cout<<"SKIP = "<<stride<<endl;
 	//tra_nishi tra1("../samp/md_pra.cod","../samp/pra.pdb","protein");
