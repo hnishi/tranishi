@@ -4,13 +4,13 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-   cout<<"Version info. tranishi v1.3.1 \n";
+   cout<<"Version info. tranishi v1.3.2 \n";
 // ##################### ARGUMENT HANDLING ##########################
 // argv[1]: input file
   if( argv[1]==NULL ){
     puts("No ARGUMEMTS");
     //puts("USAGE: ./a.out (input parameter file) ");
-    puts("USAGE: ./a.out (trajectory) (pdb file) (optional: stride) (optional: selection)");
+    puts("USAGE: ./a.out (trajectory) (pdb file) (optional: skip) (optional: selection)");
     puts("USAGE: selection: all, protein, heavy, mainchain, ca  ");
     return 1;
   }
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 
 // Tranishi
     cout<<"ATOM SELECTION = "<<selectatom<<endl;
-	cout<<"STRIDE = "<<stride<<endl;
+	cout<<"SKIP = "<<stride<<endl;
 	//tra_nishi tra1("../samp/md_pra.cod","../samp/pra.pdb","protein");
 	//tra_nishi tra1("samp/md_npt_10.cod","samp/md0.out.pdb",1);
 	cout<<"### now loading cod file ###\n";
