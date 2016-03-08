@@ -85,7 +85,8 @@ void tra_nishi::constructor( const char *codname, const char *pdbname, int n, st
             loopdist=loopnum[1]-loopnum[0];
             //cout<<"loopdist= "<<loopdist<<endl;
             while( loopnum[total_step-1] != ( loopnum[total_step-2] + loopdist ) ){
-                cout<<"NOTE: Loopnumber between two steps are different from other ones."<<endl;
+                cout<<"NOTE: the difference between loopnumbers of the last two frmaes is different from the previous one."<<endl;
+                cout<<"NOTE: delete the last frame"<<endl;
                 total_step--;   // check whether total_step is wrong or correct
             }
         }else{

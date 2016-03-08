@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(int argc, char *argv[]){
-   cout<<"Version info. tranishi v1.3.4 \n";
+   cout<<"Version info. tranishi v1.3.5 \n";
 // ##################### ARGUMENT HANDLING ##########################
 // argv[1]: input file
   if( argv[1]==NULL ){
