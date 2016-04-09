@@ -1,6 +1,10 @@
 # tranishi
 Make movie.pdb from trajectory file of psygene
 
+# コンパイル
+make してください。
+エラーが出るときは、一度make cleanしてみてください。
+
 #使い方
 ./tranishi (trajectory file) (pdb file) (stride) (selection)
 
