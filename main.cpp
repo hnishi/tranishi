@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-   cout<<"Version info. tranishi v1.3.6 \n";
+   cout<<"Version info. tranishi v1.3.7 \n";
 // ##################### ARGUMENT HANDLING ##########################
   if( argv[1]==NULL ){
     puts("No ARGUMEMTS");
