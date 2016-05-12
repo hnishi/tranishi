@@ -85,7 +85,7 @@ pdb_nishi::pdb_nishi(const char *pdbname){
 		//if(bfchai[0]=='\0') cout<<"NULL\n";
 		//else cout<<"bfchai= "<<bfchai<<"  ,endl\n";
 		//bfchai[1]=' ';
-		strncpy(buf2, &buf1[22], 4); buf2[4] = '\0';
+		strncpy(buf2, &buf1[22], 8); buf2[8] = '\0';
 		sscanf(buf2, "%d", &bfrnum);
 		//strncpy(atom->iCode, &textbuf[26], 1);
 		strncpy(buf2, &buf1[30], 8); buf2[8] = '\0';
