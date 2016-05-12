@@ -39,22 +39,22 @@ int main(int argc, char *argv[]){
   }}
 
 // Tranishi
-	cout<<"### your input information ###\n";
-　　    cout<<"ATOM SELECTION = "<<selectatom<<endl;
-	cout<<"FRAME INTERVAL = "<<stride<<endl;
-	cout<<"### now loading cod file ###\n";
-	tra_nishi tra1( codname.c_str(), pdbname.c_str(),stride, selectatom.c_str() );
-	cout<<"TOTAL FRAME = "<<tra1.total_step<<endl;
-	//tra1.pdb1->write_pdb("xxx.pdb");
-	//tra1.write_step("md.pdb", 0);
-	//tra1.write_cod("zzz.pdb",1);
-	//tra1.fix_cod_npt();
-	//tra1.fix_cod(77.63074,80.07944,158.1261);  // for md_pra.cod and pra.pdb
-	if(tra1.total_step/stride>500 && selectatom == "all"){
-		puts("WARNING: Number of frames of your input is more than 500.");
-		puts("You can set a third argument as a stride number when the output file is too large to show movies with some viewer.");
-    }
-	/*	puts("!!! Do you change the stride? put 'y' or 'n'");
+  cout<<"### your input information ###\n";
+  cout<<"ATOM SELECTION = "<<selectatom<<endl;
+  cout<<"FRAME INTERVAL = "<<stride<<endl;
+  cout<<"### now loading cod file ###\n";
+  tra_nishi tra1( codname.c_str(), pdbname.c_str(),stride, selectatom.c_str() );
+  cout<<"TOTAL FRAME = "<<tra1.total_step<<endl;
+  //tra1.pdb1->write_pdb("xxx.pdb");
+  //tra1.write_step("md.pdb", 0);
+  //tra1.write_cod("zzz.pdb",1);
+  //tra1.fix_cod_npt();
+  //tra1.fix_cod(77.63074,80.07944,158.1261);  // for md_pra.cod and pra.pdb
+  if(tra1.total_step/stride>500 && selectatom == "all"){
+    puts("WARNING: Number of frames of your input is more than 500.");
+    puts("You can set a third argument as a stride number when the output file is too large to show movies with some viewer.");
+  }
+ /*puts("!!! Do you change the stride? put 'y' or 'n'");
 		string yn;
 		cin >> yn;
 		if( yn == "y" ){
